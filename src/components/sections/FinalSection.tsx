@@ -18,7 +18,6 @@ export default function FinalSection({
       dir={isArabic ? "rtl" : "ltr"}
       className="relative overflow-hidden bg-[#fffaf7] px-5 py-24 text-slate-900 sm:px-8 sm:py-32"
     >
-      {/* Background decorations */}
       <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-rose-200/30 blur-3xl" />
       <div className="pointer-events-none absolute -right-32 bottom-10 h-96 w-96 rounded-full bg-pink-200/30 blur-3xl" />
 
@@ -29,7 +28,6 @@ export default function FinalSection({
         transition={{ duration: 0.8 }}
         className="relative mx-auto max-w-4xl text-center"
       >
-        {/* Small label */}
         <div className="mb-6 flex items-center justify-center gap-3">
           <span className="h-px w-8 bg-rose-300 sm:w-12" />
 
@@ -40,7 +38,6 @@ export default function FinalSection({
           <span className="h-px w-8 bg-rose-300 sm:w-12" />
         </div>
 
-        {/* Icon */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +48,6 @@ export default function FinalSection({
           <Gift size={31} strokeWidth={1.4} />
         </motion.div>
 
-        {/* Main title */}
         <motion.h2
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +74,6 @@ export default function FinalSection({
           )}
         </motion.h2>
 
-        {/* Birthday message */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +86,6 @@ export default function FinalSection({
             : "Happy 17th birthday to the sweetest part of my life. I hope this year brings you endless smiles, beautiful memories, success, and everything your heart wishes for. You deserve all the happiness in the world."}
         </motion.p>
 
-        {/* Highlight card */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -122,7 +116,6 @@ export default function FinalSection({
           </p>
         </motion.div>
 
-        {/* Final line */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

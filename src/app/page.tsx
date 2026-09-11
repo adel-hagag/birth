@@ -81,7 +81,7 @@ useEffect(() => {
       <Beginning language={language} />
       <HerSection language={language} />
       <OurStory language={language} />
-      <LoveLetter language={language} />
+      <LoveLetter />
       <Countdown language={language} />
       <PhotoGallery language={language} />
       <ChatMemories language={language} />
