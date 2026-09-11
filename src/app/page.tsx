@@ -1,69 +1,95 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+import Login from "@/components/auth/Login";
+import WelcomeScreen from "@/components/sections/WelcomeScreen";
+import Hero from "@/components/sections/Hero";
+import Beginning from "@/components/sections/Beginning";
+import HerSection from "@/components/sections/HerSection";
+import OurStory from "@/components/sections/OurStory";
+import LoveLetter from "@/components/sections/LoveLetter";
+import Countdown from "@/components/sections/Countdown";
+import MusicPlayer from "@/components/music/MusicPlayer";
+import PhotoGallery from "@/components/sections/PhotoGallery";
+import ChatMemories from "@/components/sections/ChatMemories";
+import FinalSection from "@/components/sections/FinalSection";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
+  const [unlocked, setUnlocked] = useState(false);
+  const [welcomeOpened, setWelcomeOpened] = useState(false);
+  const [language, setLanguage] = useState<"en" | "ar">("en");
+
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const toggleLanguage = () => {
+    setLanguage((previous) => (previous === "en" ? "ar" : "en"));
+  };
+
+  const handleUnlock = () => {
+    setUnlocked(true);
+  };
+
+  const handleWelcomeUnlock = () => {
+    setWelcomeOpened(true);
+  };
+
+useEffect(() => {
+  if (!welcomeOpened) return;
+
+  const audio = audioRef.current;
+  if (!audio) return;
+
+  audio.src = "/music/ramy_sabry.mp3";
+  audio.volume = 0.7;
+  audio.currentTime = 0;
+  audio.load();
+
+  audio.play().catch(() => {
+    console.log("اضغط تشغيل من مشغل الأغاني");
+  });
+}, [welcomeOpened]);
+
+  if (!unlocked) {
+    return <Login onUnlock={handleUnlock} />;
+  }
+
+  if (!welcomeOpened) {
+    return <WelcomeScreen onUnlock={handleWelcomeUnlock} />;
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="relative min-h-screen overflow-x-hidden bg-brand-950">
+      <div className="noise" />
+
+      <button
+        type="button"
+        onClick={toggleLanguage}
+        aria-label="تغيير اللغة"
+        className="fixed right-4 top-4 z-[10000] flex h-12 w-12 items-center justify-center rounded-full border border-pink-300/50 bg-[#120b1c]/95 text-lg font-bold text-pink-100 shadow-[0_8px_30px_rgba(236,72,153,0.35)] backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:border-pink-300 hover:bg-pink-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-300/70 sm:right-6 sm:top-6"
+      >
+        {language === "en" ? "ع" : "EN"}
+      </button>
+
+<audio
+  ref={audioRef}
+  preload="auto"
+/>
+
+      <Hero language={language} />
+      <Beginning language={language} />
+      <HerSection language={language} />
+      <OurStory language={language} />
+      <LoveLetter language={language} />
+      <Countdown language={language} />
+      <PhotoGallery language={language} />
+      <ChatMemories language={language} />
+      <FinalSection language={language} />
+
+      <MusicPlayer audioRef={audioRef} />
+
+      <BackToTop />
+    </main>
   );
 }
