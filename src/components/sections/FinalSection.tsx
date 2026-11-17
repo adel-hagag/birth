@@ -60,7 +60,7 @@ export default function FinalSection({
               عيد ميلاد سعيد
               <br />
               <span className="font-serif italic text-rose-500">
-                يا ملوووكتي
+                يا اش
               </span>
             </>
           ) : (
@@ -82,7 +82,7 @@ export default function FinalSection({
           className="mx-auto mt-8 max-w-2xl text-sm leading-8 text-slate-500 sm:text-base md:text-lg"
         >
           {isArabic
-            ? "كل سنة وإنتِ طيبة يا أجمل حاجة حصلتلي. أتمنى سنتك الـ17 تكون مليانة فرحة ونجاح وضحك وأيام حلوة شبه قلبك. ويارب أفضل دايمًا أشوفك مبسوطة وأكون سبب في ابتسامتك."
+            ? "كل سنة وإنتِ طيبة يا أجمل حاجة حصلتلي. أتمنى عمرك يكون مليانة فرحة ونجاح وضحك وأيام حلوة شبه قلبك. ويارب أفضل دايمًا أشوفك مبسوطة وأكون سبب في ابتسامتك."
             : "Happy 17th birthday to the sweetest part of my life. I hope this year brings you endless smiles, beautiful memories, success, and everything your heart wishes for. You deserve all the happiness in the world."}
         </motion.p>
 
@@ -139,7 +139,7 @@ export default function FinalSection({
           </div>
 
           <p className="mt-5 font-serif text-lg italic text-slate-500">
-            {isArabic ? "بحبك يا ملككك ❤️" : "I love you, Malak ❤️"}
+            {isArabic ? "بحبك يا اش ❤️" : "I love you, ASH ❤️"}
           </p>
         </motion.div>
       </motion.div>

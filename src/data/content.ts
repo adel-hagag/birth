@@ -1,10 +1,10 @@
 export const birthdayContent = {
-  herName: "Malak",
-  nickname: "Malooka",
+  herName: "❣️آش♾️",
+  nickname: "❣️آش♾️",
   yourName: "Adel",
 
   story: {
-    beginning: "11.06.2026",
+    beginning: "23.02.2023",
     birthday: "28.09.2026",
   },
 

@@ -16,46 +16,52 @@ type PhotoGalleryProps = {
 const childhoodPhotos = [
   {
     id: 1,
-    src: "/images/malak-5.jpeg",
-    alt: "Malak as a child",
+    src: "/images/10.jpeg",
+    alt: "ASH as a child",
   },
-  {
-    id: 2,
-    src: "/images/malak-6.jpeg",
-    alt: "Malak as a child",
-  },
+
 ];
 
 const grownUpPhotos = [
   {
     id: 3,
-    src: "/images/malak-1.jpeg",
-    alt: "Malak",
+    src: "/images/11.jpeg",
+    alt: "ASH",
   },
   {
     id: 4,
-    src: "/images/malak-2.jpeg",
-    alt: "Malak",
+    src: "/images/12.jpeg",
+    alt: "ASH",
   },
   {
     id: 5,
-    src: "/images/malak-3.jpeg",
-    alt: "Malak",
+    src: "/images/13.jpeg",
+    alt: "ASH",
   },
   {
     id: 6,
-    src: "/images/malak-4.jpeg",
-    alt: "Malak",
+    src: "/images/14.jpeg",
+    alt: "ASH",
   },
   {
     id: 7,
-    src: "/images/malak-7.jpeg",
-    alt: "Malak",
+    src: "/images/15.jpeg",
+    alt: "ASH",
   },
   {
     id: 8,
-    src: "/images/malak-8.jpeg",
-    alt: "Malak",
+    src: "/images/16.jpeg",
+    alt: "ASH",
+  },
+  {
+    id: 9,
+    src: "/images/17.jpeg",
+    alt: "ASH",
+  },
+  {
+    id: 10,
+    src: "/images/18.jpeg",
+    alt: "ASH",
   },
 ];
 
@@ -152,7 +158,7 @@ export default function PhotoGallery({
             </span>
 
             <h3 className="mt-4 font-serif text-4xl text-[#61364c] sm:text-5xl">
-              {isArabic ? "ملك وهي صغيرة" : "Little Malak"}
+              {isArabic ? "اش وهي صغيرة" : "Little Malak"}
             </h3>
 
             <p className="mt-6 text-lg leading-9 text-[#8b6576]">
@@ -230,7 +236,7 @@ export default function PhotoGallery({
             </span>
 
             <h3 className="mt-4 font-serif text-4xl text-[#61364c] sm:text-5xl">
-              {isArabic ? "ملك دلوقتي" : "Malak today"}
+              {isArabic ? "اش دلوقتي" : "ASH today"}
             </h3>
 
             <p className="mt-5 text-lg leading-8 text-[#8b6576]">

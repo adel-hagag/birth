@@ -35,21 +35,6 @@ export default function Home() {
     setWelcomeOpened(true);
   };
 
-useEffect(() => {
-  if (!welcomeOpened) return;
-
-  const audio = audioRef.current;
-  if (!audio) return;
-
-  audio.src = "/music/ramy_sabry.mp3";
-  audio.volume = 0.7;
-  audio.currentTime = 0;
-  audio.load();
-
-  audio.play().catch(() => {
-    console.log("اضغط تشغيل من مشغل الأغاني");
-  });
-}, [welcomeOpened]);
 
   if (!unlocked) {
     return <Login onUnlock={handleUnlock} />;
@@ -87,7 +72,7 @@ useEffect(() => {
       <ChatMemories language={language} />
       <FinalSection language={language} />
 
-      <MusicPlayer audioRef={audioRef} />
+      <MusicPlayer audioRef={audioRef} autoPlay={welcomeOpened} />
 
       <BackToTop />
     </main>

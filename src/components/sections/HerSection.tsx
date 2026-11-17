@@ -136,7 +136,7 @@ export default function HerSection({ language }: HerSectionProps) {
           className="my-16 overflow-hidden text-center sm:my-20 md:my-28"
         >
           <p className="select-none font-serif text-[25vw] font-bold leading-none tracking-[-0.08em] text-rose-500/[0.07] sm:text-[20vw] md:text-[15vw]">
-            MALAK
+            ASH
           </p>
         </motion.div>
 

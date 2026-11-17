@@ -16,32 +16,49 @@ import {
 
 type MusicPlayerProps = {
   audioRef: React.RefObject<HTMLAudioElement | null>;
+  autoPlay: boolean;
 };
 
 const songs = [
   {
-    title: "Ramy Sabry",
+    title: "نداء شرارة",
     artist: "Love Playlist",
-    src: "/music/ramy_sabry.mp3",
+    src: "/music/wmaak.mp3",
   },
   {
-    title: "Mahmoud El Esseily",
+    title: "Ahmed Saad",
     artist: "Our Special Song",
-    src: "/music/Mahmoud El Esseily.mp3",
+    src: "/music/ahmd_sad_wadny.mp3",
   },
   {
-    title: "TUL8TE",
+    title: "كايروكي",
     artist: "For Us",
-    src: "/music/our-song.mp3",
+    src: "/music/5-_7elmy.Ana.mp3",
   },
 ];
 
-export default function MusicPlayer({ audioRef }: MusicPlayerProps) {
+export default function MusicPlayer({ audioRef , autoPlay }: MusicPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [volume, setVolume] = useState(70);
   const [currentSong, setCurrentSong] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
+
+  useEffect(() => {
+  if (!autoPlay) return;
+
+  const audio = audioRef.current;
+  if (!audio) return;
+
+  audio.src = songs[0].src;
+  audio.volume = 0.7;
+  audio.currentTime = 0;
+  audio.load();
+
+  audio.play().catch(() => {
+    setIsPlaying(false);
+  });
+}, [autoPlay, audioRef]);
 
   const selectedSong = songs[currentSong];
 

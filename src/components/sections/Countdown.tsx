@@ -286,7 +286,7 @@ export default function Countdown({ language }: CountdownProps) {
 
                   <span className="text-sm">
                     {isArabic
-                      ? "بحبك يا ملاكي ❤️"
+                      ? "بحبك يا ❣️آش♾️ ❤️"
                       : "I love you, my angel ❤️"}
                   </span>
 
@@ -347,7 +347,7 @@ export default function Countdown({ language }: CountdownProps) {
             <Sparkles className="h-4 w-4" />
 
             <p className="font-display text-2xl sm:text-4xl">
-              28.09.2026
+              23.02.2023
             </p>
 
             <Sparkles className="h-4 w-4" />

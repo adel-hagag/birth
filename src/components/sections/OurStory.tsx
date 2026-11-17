@@ -5,7 +5,7 @@ import { Heart, Sparkles } from "lucide-react";
 
 const storyItems = [
   {
-    date: "11.06.2026",
+    date: "23.02.2023",
     number: "01",
     title: {
       en: "The First Hello",

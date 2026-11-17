@@ -20,22 +20,26 @@ export default function Login({ onUnlock }: LoginProps) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const CORRECT_EMAIL = "malaktamer@gmail.com";
-  const CORRECT_PASSWORD = "2892026";
+  const CORRECT_EMAIL = "adelASH1010166@gmail.com";
+  const CORRECT_PASSWORD = "2322023";
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  console.log("Entered Email:", email.trim().toLowerCase());
+  console.log("Expected Email:", CORRECT_EMAIL.toLowerCase());
+  console.log("Password Match:", password === CORRECT_PASSWORD);
+
+  if (
+    email.trim().toLowerCase() === CORRECT_EMAIL.toLowerCase() &&
+    password === CORRECT_PASSWORD
+  ) {
     setError("");
-
-    if (
-      email.trim().toLowerCase() === CORRECT_EMAIL &&
-      password === CORRECT_PASSWORD
-    ) {
-      onUnlock();
-    } else {
-      setError("الإيميل أو كلمة السر غلط ❤️");
-    }
-  };
+    onUnlock();
+  } else {
+    setError("الإيميل أو كلمة السر غلط ❤️");
+  }
+};
 
   return (
     <main className="min-h-screen w-full overflow-hidden bg-[#fffaf7] text-slate-900">

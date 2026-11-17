@@ -119,7 +119,7 @@ export default function Hero({ language }: HeroProps) {
         >
           <p className="font-display text-2xl italic text-rose-500 sm:text-3xl">
             {isArabic
-              ? `ملووكه ${birthdayContent.nickname}`
+              ? `آش❣️♾️ ${birthdayContent.nickname}`
               : `My ${birthdayContent.nickname}.`}
           </p>
 
